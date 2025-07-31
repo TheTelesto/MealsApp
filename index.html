@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weekly dinner planner with selectable meal options and automatic shopping list generation">
+    <meta name="keywords" content="meal planner, dinner planning, shopping list, meal prep, weekly menu">
+    <meta name="author" content="Meal Planner App">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Weekly Dinner Planner">
+    <meta property="og:description" content="Plan your weekly dinners and generate shopping lists effortlessly">
+    <meta property="og:url" content="https://yourusername.github.io/MealsApp/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Weekly Dinner Planner">
+    <meta property="twitter:description" content="Plan your weekly dinners and generate shopping lists effortlessly">
+    
+    <title>Weekly Dinner Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Weekly Dinner Planner</h1>
+            <p>Plan your dinners and generate shopping lists effortlessly</p>
+        </header>
+
+        <main>
+            <!-- Meal Planning Section -->
+            <section class="meal-planning">
+                <div class="section-header">
+                    <h2>Weekly Dinner Menu</h2>
+                    <button id="generatePlan" class="btn btn-primary">Generate Dinner Options</button>
+                </div>
+                
+                <div class="meal-grid" id="mealGrid">
+                    <!-- Days will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Shopping List Section -->
+            <section class="shopping-list">
+                <div class="section-header">
+                    <h2>Shopping List</h2>
+                    <button id="generateShoppingList" class="btn btn-secondary">Generate Shopping List</button>
+                </div>
+                
+                <div class="shopping-content">
+                    <div id="shoppingList" class="shopping-items">
+                        <p class="empty-state">Generate dinner options and select your preferences to see your shopping list</p>
+                    </div>
+                    <button id="printShoppingList" class="btn btn-outline" style="display: none;">Print List</button>
+                </div>
+            </section>
+
+            <!-- Meal Management Section -->
+            <section class="meal-management">
+                <div class="section-header">
+                    <h2>Manage Meals</h2>
+                    <button id="addMealBtn" class="btn btn-secondary">Add New Meal</button>
+                </div>
+                
+                <div class="meals-list" id="mealsList">
+                    <!-- Existing meals will be displayed here -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for better meal planning | <a href="https://github.com/yourusername/MealsApp" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <!-- Add Meal Modal -->
+    <div id="addMealModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Meal</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="addMealForm">
+                <div class="form-group">
+                    <label for="mealName">Meal Name:</label>
+                    <input type="text" id="mealName" required placeholder="e.g., Grilled Chicken with Vegetables">
+                </div>
+                <div class="form-group">
+                    <label for="mealIngredients">Ingredients (one per line):</label>
+                    <textarea id="mealIngredients" rows="6" placeholder="Chicken breast&#10;Rice&#10;Broccoli&#10;Olive oil&#10;Garlic&#10;Salt&#10;Black pepper" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancelAdd">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Meal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
