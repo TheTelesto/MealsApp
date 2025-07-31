@@ -15,7 +15,7 @@ A simple, elegant web application for planning weekly dinners and generating sho
 
 ## 🚀 Live Demo
 
-Visit the live application: [Your GitHub Pages URL will go here]
+Visit the live application: https://thetelesto.github.io/MealsApp/
 
 ## 🛠️ How to Use
 
